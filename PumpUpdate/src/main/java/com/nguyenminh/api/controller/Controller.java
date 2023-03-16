@@ -20,7 +20,6 @@ import com.nguyenminh.api.service.MoistureService;
 import jakarta.servlet.http.HttpServletResponse;
 
 @RestController
-@CrossOrigin(origins = "*")
 @RequestMapping("/api")
 
 public class Controller {
@@ -31,10 +30,9 @@ private MoistureService moistureService;
 		moistureService = theMoistureService;
 	}
 	
-	@CrossOrigin("*")
+	
 	@GetMapping("/alldetail")
-	public List<Moisture> findAll(HttpServletResponse response) {
-	    response.setHeader("Access-Control-Allow-Origin", " https://64d1-2405-4803-c88b-ca20-983e-9b24-5a9e-e575.ap.ngrok.io");
+	public List<Moisture> findAll() {
 	    return moistureService.findAll();
 	}
 	
