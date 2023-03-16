@@ -32,7 +32,8 @@ private MoistureService moistureService;
 	
 	
 	@GetMapping("/alldetail")
-	public List<Moisture> findAll() {
+	public List<Moisture> findAll(HttpServletResponse response) {
+	response.setHeader("Access-Control-Allow-Origin", "*");
 	    return moistureService.findAll();
 	}
 	
